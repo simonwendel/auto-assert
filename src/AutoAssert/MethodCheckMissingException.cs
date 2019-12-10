@@ -1,4 +1,4 @@
-﻿namespace AutoVerify
+﻿namespace AutoAssert
 {
     using System.Collections.Generic;
 

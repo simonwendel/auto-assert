@@ -1,4 +1,4 @@
-﻿namespace AutoVerify.Tests
+﻿namespace AutoAssert.Tests
 {
     using System;
     using AutoFixture;

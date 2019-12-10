@@ -1,4 +1,4 @@
-# AutoVerify
+# AutoAssert
 
 Removing boilerplate code to unit test argument checking.
 

@@ -1,8 +1,8 @@
-﻿namespace AutoVerify.Tests
+﻿namespace AutoAssert.Tests
 {
     using System;
+    using AutoAssert;
     using AutoFixture;
-    using AutoVerify;
     using FluentAssertions;
     using Xunit;
 

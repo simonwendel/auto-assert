@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29519.181
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoVerify.Tests", "AutoVerify.Tests\AutoVerify.Tests.csproj", "{F8A41A1E-3084-481E-AE93-F124B59845C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoAssert.Tests", "AutoAssert.Tests\AutoAssert.Tests.csproj", "{F8A41A1E-3084-481E-AE93-F124B59845C6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoVerify", "AutoVerify\AutoVerify.csproj", "{EB39EC12-C64C-4112-B3F8-A34A03718535}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoAssert", "AutoAssert\AutoAssert.csproj", "{EB39EC12-C64C-4112-B3F8-A34A03718535}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
