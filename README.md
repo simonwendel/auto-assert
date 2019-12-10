@@ -4,7 +4,7 @@ Removing boilerplate code to unit test argument checking.
 
 ## Targets
 
-Packages target .NET Framework 4.5.2, .NET Standard 1.5 and .NET Standard 2.0.
+Packages target .NET Framework 4.5.2 and .NET Standard 2.0.
 
 ## Builds
 
