@@ -28,9 +28,9 @@
                 }
 
                 var combo = parameters
-                    .Select((type, idx) => idx == index ? null : context.Resolve(type.ParameterType)).ToArray();
+                    .Select((type, idx) => idx == index ? null : context.Resolve(type.ParameterType));
 
-                yield return (nullParameter.Name, combo);
+                yield return (nullParameter.Name, combo.ToArray());
             }
         }
     }
