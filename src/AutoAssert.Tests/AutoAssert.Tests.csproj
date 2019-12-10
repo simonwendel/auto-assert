@@ -27,7 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AutoVerify\AutoAssert.csproj" />
+    <ProjectReference Include="..\AutoAssert\AutoAssert.csproj" />
   </ItemGroup>
 
 </Project>
