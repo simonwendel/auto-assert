@@ -10,7 +10,7 @@
     using Moq;
     using Xunit;
 
-    public class NullCheckAssertionsTests
+    public class NullCheckAsserterTests
     {
         private readonly object checkedObject;
         private readonly MethodBase method;
@@ -21,7 +21,7 @@
         private readonly Mock<IMethodInvoker> methodInvoker;
         private readonly NullCheckAsserter sut;
 
-        public NullCheckAssertionsTests()
+        public NullCheckAsserterTests()
         {
             var fixture = new Fixture();
             checkedObject = fixture.Create<object>();
