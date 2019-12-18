@@ -15,7 +15,7 @@ var assert = Asserters.GetNullCheckAsserter();
 assert.AllCheckedIn<ClassThatShouldCheckForNull>();
 ```
 
-If any public method or property doesn't throw for null arguments, AllCheckedIn<T> will throw.
+If any public method or property doesn't throw for null arguments, ```AllCheckedIn<T>``` will throw.
 
 ## Builds
 
