@@ -1,3 +1,5 @@
+name: '$(BuildDefinitionName)_$(nextVersion)$(Rev:.r)'
+
 trigger:
 - '*'
 
@@ -9,8 +11,6 @@ variables:
   buildProjects: '**/*.csproj'
   buildConfiguration: 'Release'
   testProjects: '**/*[Tt]ests/*.csproj'
-
-name: '$(BuildDefinitionName)_$(nextVersion)$(Rev:.r)'
 
 steps:
 - task: DotNetCoreCLI@2
