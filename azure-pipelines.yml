@@ -7,7 +7,7 @@ pool:
   vmImage: 'windows-2019'
 
 variables:
-  nextVersion: '1.0.0'
+  nextVersion: '1.0'
   buildProjects: '**/*.csproj'
   buildConfiguration: 'Release'
   testProjects: '**/*[Tt]ests/*.csproj'
