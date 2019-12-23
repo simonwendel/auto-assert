@@ -5,9 +5,12 @@ pool:
   vmImage: 'windows-2019'
 
 variables:
+  nextVersion: '1.0.0'
   buildProjects: '**/*.csproj'
   buildConfiguration: 'Release'
   testProjects: '**/*[Tt]ests/*.csproj'
+
+name: '$(BuildDefinitionName)_$(nextVersion)$(Rev:.r)'
 
 steps:
 - task: DotNetCoreCLI@2
@@ -29,12 +32,11 @@ steps:
     projects: '$(testProjects)'
     arguments: '--configuration $(BuildConfiguration)'
 
-- task: CopyFiles@2
-  displayName: Copy
+- task: DotNetCoreCLI@2
+  displayName: Pack
   inputs:
-    SourceFolder: '$(system.defaultworkingdirectory)'
-    Contents: '**\bin\$(BuildConfiguration)\**'
-    TargetFolder: '$(build.artifactstagingdirectory)'
+    command: pack
+    versioningScheme: byBuildNumber
 
 - task: PublishBuildArtifacts@1
   displayName: Publish
