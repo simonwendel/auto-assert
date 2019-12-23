@@ -38,6 +38,12 @@ steps:
     command: pack
     versioningScheme: byBuildNumber
 
+- task: DotNetCoreCLI@2
+  displayName: Push
+  inputs:
+    command: push
+    publishVstsFeed: '4a29a0d1-45be-4c7a-b1ce-2a38e834f6fb/5473b1dc-c0be-435c-8ebd-a0f86443efee'
+
 - task: PublishBuildArtifacts@1
   displayName: Publish
   inputs:
