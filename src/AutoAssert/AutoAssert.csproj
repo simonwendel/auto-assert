@@ -1,6 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <Authors>Simon Wendel</Authors>
+    <PackageProjectUrl>https://github.com/simonwendel/auto-assert</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/simonwendel/auto-assert/blob/master/LICENSE</PackageLicenseUrl>
     <TargetFrameworks>net452;netstandard2.0</TargetFrameworks>
     <CodeAnalysisRuleSet>../StyleCop.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
