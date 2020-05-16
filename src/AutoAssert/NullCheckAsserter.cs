@@ -69,8 +69,6 @@
                 }
                 catch
                 {
-                    // something else broke, but thats fine...
-                    continue;
                 }
 
                 // if we get here, no null exception thrown
