@@ -40,5 +40,17 @@
             notCheckingForNull.Should().ThrowExactly<AggregateException>(because: "not all parameters are checked")
                 .Where(exc => exc.InnerExceptions.SequenceEqual(expectedExceptionSequence));
         }
+
+        [Fact]
+        public void CheckAllParametersIn_GivenTypeWithRefParametersThatChecksForNulls_DoesNotThrow()
+        {
+            assert.AllCheckedIn<ClassWithRefParameters>();
+        }
+
+        [Fact]
+        public void CheckAllParametersIn_GivenTypeWithOutParametersThatChecksForNulls_DoesNotThrow()
+        {
+            assert.AllCheckedIn<ClassWithOutParameters>();
+        }
     }
 }

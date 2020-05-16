@@ -1,5 +1,6 @@
 ﻿namespace AutoAssert
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Reflection;
@@ -21,17 +22,49 @@
             for (int index = 0; index < parameters.Length; ++index)
             {
                 var nullParameter = parameters[index];
-                if (nullParameter.ParameterType.IsValueType)
+                if (nullParameter.ParameterType.IsValueType || nullParameter.IsOut)
                 {
-                    // can't null check value types
+                    // can't null check value types or out variables
                     continue;
                 }
 
                 var combo = parameters
-                    .Select((type, idx) => idx == index ? null : context.Resolve(type.ParameterType));
+                    .Select((parameter, idx) => idx == index ? null : ResolveValue(parameter));
 
                 yield return (nullParameter.Name, combo.ToArray());
             }
+        }
+
+        private object ResolveValue(ParameterInfo parameter)
+        {
+            var type = parameter.ParameterType;
+            if (parameter.IsOut)
+            {
+                type = GetTypeForOutParameter(parameter);
+            }
+
+            return context.Resolve(type);
+        }
+
+        private Type GetTypeForOutParameter(ParameterInfo parameter)
+        {
+            var name = parameter.ParameterType.FullName;
+            name = name.Remove(name.Length - 1);
+            return GetTypeByName(name);
+        }
+
+        private Type GetTypeByName(string name)
+        {
+            foreach (var assembly in AppDomain.CurrentDomain.GetAssemblies())
+            {
+                var type = assembly.GetType(name);
+                if (type != null)
+                {
+                    return type;
+                }
+            }
+
+            throw new InvalidOperationException($"Can't find type with name {name}");
         }
     }
 }
