@@ -54,17 +54,9 @@
         }
 
         private Type GetTypeByName(string name)
-        {
-            foreach (var assembly in AppDomain.CurrentDomain.GetAssemblies())
-            {
-                var type = assembly.GetType(name);
-                if (type != null)
-                {
-                    return type;
-                }
-            }
-
-            throw new InvalidOperationException($"Can't find type with name {name}");
-        }
+            => AppDomain.CurrentDomain.GetAssemblies()
+                .Select(a => a.GetType(name))
+                .Distinct()
+                .Single(t => t != null);
     }
 }
