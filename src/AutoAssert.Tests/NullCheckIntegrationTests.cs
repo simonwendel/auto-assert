@@ -74,5 +74,11 @@
         {
             assert.AllCheckedIn<GenericClass<Dependencies.ISomeDependency>>();
         }
+
+        [Fact]
+        public void AllCheckedIn_GivenTypeWithPublicEvents_DoesNotThrow()
+        {
+            assert.AllCheckedIn<ClassWithEvents>();
+        }
     }
 }

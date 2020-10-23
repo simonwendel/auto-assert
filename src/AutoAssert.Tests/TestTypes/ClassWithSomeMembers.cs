@@ -19,6 +19,11 @@
         {
         }
 
+
+        public event EventHandler BasicEvent;
+
+        public event EventHandler<object> CompoundEvent;
+
         public int OneProperty { get; set; }
 
         public override void DoThings(string text)

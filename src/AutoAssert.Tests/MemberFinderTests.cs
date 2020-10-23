@@ -44,6 +44,11 @@
             // getter and setter counts
             sut.GetMethods(type).Should().HaveCount(4);
         }
+
+        [Fact]
+        public void GetEvents_GivenType_ReturnsEvents()
+        {
+            sut.GetEvents(type).Should().HaveCount(2);
         }
     }
 }

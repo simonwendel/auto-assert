@@ -9,5 +9,7 @@
         IEnumerable<ConstructorInfo> GetConstructors(Type type);
 
         IEnumerable<MethodInfo> GetMethods(Type type);
+
+        IEnumerable<EventInfo> GetEvents(Type type);
     }
 }

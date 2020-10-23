@@ -16,7 +16,23 @@
         public IEnumerable<MethodInfo> GetMethods(Type type)
         {
             Guard.AgainstNull(type, nameof(type));
-            return type.GetMethods().Where(c => c.DeclaringType == type);
+
+            var eventMethods = GetEventMethods(type);
+            return type.GetMethods().Where(
+                c => c.DeclaringType == type
+                && !eventMethods.Contains(c));
+        }
+
+        public IEnumerable<EventInfo> GetEvents(Type type)
+        {
+            Guard.AgainstNull(type, nameof(type));
+            return type.GetEvents().Where(x => x.DeclaringType == type);
+        }
+
+        private IEnumerable<MethodInfo> GetEventMethods(Type type)
+        {
+            return GetEvents(type)
+                .SelectMany(x => new[] { x.GetAddMethod(), x.GetRemoveMethod() });
         }
     }
 }
