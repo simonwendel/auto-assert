@@ -17,16 +17,14 @@
         }
 
         [Fact]
-        [Trait("Category", "Integration")]
-        public void CheckAllParametersIn_GivenTypeThatChecksAllPublicParameters_DoesNotThrow()
+        public void AllCheckedIn_GivenTypeThatChecksAllPublicParameters_DoesNotThrow()
         {
             Action checkingForNull = () => assert.AllCheckedIn<ClassThatChecksAllForNull>();
             checkingForNull.Should().NotThrow(because: "all parameters in all methods and ctors are checked");
         }
 
         [Fact]
-        [Trait("Category", "Integration")]
-        public void CheckAllParametersIn_GivenTypeThatDoesNotCheckAllPublicParameters_ThrowsException()
+        public void AllCheckedIn_GivenTypeThatDoesNotCheckAllPublicParameters_ThrowsException()
         {
             var expectedExceptionSequence = new Exception[]
             {
@@ -42,15 +40,39 @@
         }
 
         [Fact]
-        public void CheckAllParametersIn_GivenTypeWithRefParametersThatChecksForNulls_DoesNotThrow()
+        public void AllCheckedIn_GivenTypeWithRefParametersThatChecksForNulls_DoesNotThrow()
         {
             assert.AllCheckedIn<ClassWithRefParameters>();
         }
 
         [Fact]
-        public void CheckAllParametersIn_GivenTypeWithOutParametersThatChecksForNulls_DoesNotThrow()
+        public void AllCheckedIn_GivenTypeWithOutParametersThatChecksForNulls_DoesNotThrow()
         {
             assert.AllCheckedIn<ClassWithOutParameters>();
+        }
+
+        [Fact]
+        public void AllCheckedIn_GivenGenericTypeOfValueTypeThatChecksForNulls_DoesNotThrow()
+        {
+            assert.AllCheckedIn<GenericClass<int>>();
+        }
+
+        [Fact]
+        public void AllCheckedIn_GivenGenericTypeOfObjectThatChecksForNulls_DoesNotThrow()
+        {
+            assert.AllCheckedIn<GenericClass<object>>();
+        }
+
+        [Fact]
+        public void AllCheckedIn_GivenGenericTypeOfStringThatChecksForNulls_DoesNotThrow()
+        {
+            assert.AllCheckedIn<GenericClass<string>>();
+        }
+
+        [Fact]
+        public void AllCheckedIn_GivenGenericTypeOfInterfaceThatChecksForNulls_DoesNotThrow()
+        {
+            assert.AllCheckedIn<GenericClass<Dependencies.ISomeDependency>>();
         }
     }
 }
