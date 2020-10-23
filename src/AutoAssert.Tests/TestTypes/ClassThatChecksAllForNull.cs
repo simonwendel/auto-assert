@@ -55,6 +55,10 @@
         {
         }
 
+        [SuppressMessage(
+            "CodeQuality",
+            "IDE0051:Remove unused private members",
+            Justification = "We don't use it here, but can't remove them either...")]
         private void PrivateUnitOfWork(object obj)
         {
         }
