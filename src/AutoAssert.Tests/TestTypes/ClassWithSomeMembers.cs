@@ -19,6 +19,8 @@
         {
         }
 
+        public int OneProperty { get; set; }
+
         public override void DoThings(string text)
             => throw new NotImplementedException();
 

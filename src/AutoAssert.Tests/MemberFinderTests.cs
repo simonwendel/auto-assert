@@ -41,7 +41,9 @@
         [Fact]
         public void GetMethods_GivenType_ReturnsMethods()
         {
-            sut.GetMethods(type).Should().HaveCount(2);
+            // getter and setter counts
+            sut.GetMethods(type).Should().HaveCount(4);
+        }
         }
     }
 }
