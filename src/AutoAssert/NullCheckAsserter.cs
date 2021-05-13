@@ -62,6 +62,10 @@
                 {
                     methodInvoker.Invoke(method, systemUnderTest, paramList);
                 }
+                catch (ArgumentNullException)
+                {
+                    continue;
+                }
                 catch (TargetInvocationException ex)
                 when (ex.InnerException is ArgumentNullException)
                 {
