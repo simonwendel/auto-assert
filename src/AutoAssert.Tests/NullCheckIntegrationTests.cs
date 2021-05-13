@@ -80,5 +80,11 @@
         {
             assert.AllCheckedIn<ClassWithEvents>();
         }
+
+        [Fact]
+        public void AllCheckedIn_GivenTypeWithYieldReturningMethod_DoesNotThrow()
+        {
+            assert.AllCheckedIn<ClassWithYieldReturn>();
+        }
     }
 }

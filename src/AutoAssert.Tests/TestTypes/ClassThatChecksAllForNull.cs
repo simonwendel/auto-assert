@@ -4,7 +4,7 @@
     using System.Diagnostics.CodeAnalysis;
 
     /// <summary>
-    /// This class will fail check all parameters for null, methods, properties and ctor.
+    /// This class will check all parameters for null, methods, properties and ctor.
     /// </summary>
     [SuppressMessage(
         "Style",
