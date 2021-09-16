@@ -5,7 +5,7 @@
     <Description>Removes boilerplate code when unit testing argument checks</Description>
     <PackageProjectUrl>https://github.com/simonwendel/auto-assert</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/simonwendel/auto-assert/blob/master/LICENSE</PackageLicenseUrl>
-    <TargetFrameworks>net452;netstandard2.0</TargetFrameworks>
+    <TargetFrameworks>net452;net5.0;netstandard2.0</TargetFrameworks>
     <PackageIcon>icon.png</PackageIcon>
     <CodeAnalysisRuleSet>../StyleCop.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
